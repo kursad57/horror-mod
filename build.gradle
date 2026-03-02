@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '5.1.+'
+}
+
+group = 'com.example.horrormod'
+version = '1.0.0'
+archivesBaseName = 'horrormod'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.minecraftforge.net' }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:1.20.1-46.0.14"
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    runs {
+        client {
+            workingDirectory project.file('run')
+            mods {
+                horrormod { source sourceSets.main }
+            }
+        }
+    }
+}
+
+jar {
+    archiveBaseName.set('horrormod')
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="none"/>
+  <!-- body -->
+  <ellipse cx="64" cy="68" rx="36" ry="26" fill="#FFD93B" stroke="#E6B800" stroke-width="2"/>
+  <!-- head -->
+  <circle cx="44" cy="44" r="20" fill="#FFD93B" stroke="#E6B800" stroke-width="2"/>
+  <!-- eye -->
+  <circle cx="38" cy="40" r="3" fill="#000000"/>
+  <!-- beak -->
+  <path d="M52 48 C62 52, 72 52, 68 46 C72 48, 62 44, 52 48 Z" fill="#FF7A00" stroke="#CC5C00" stroke-width="1"/>
+  <!-- wing -->
+  <path d="M78 66 C88 62, 96 70, 78 74 C84 70, 88 76, 78 66 Z" fill="#FFD14D" stroke="#E6B800" stroke-width="1"/>
+</svg>

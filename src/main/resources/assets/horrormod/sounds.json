@@ -1,0 +1,12 @@
+{
+  "horrormod.night_amb": {
+    "sounds": ["horrormod:night_amb"]
+  },
+  "horrormod/jumpscare": {
+    "sounds": ["horrormod:jumpscare"]
+  }
+  ,"horrormod.whisper": {
+    "sounds": ["horrormod:whisper"]
+  }
+  
+}

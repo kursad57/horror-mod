@@ -1,0 +1,32 @@
+# Gradle / build
+/.gradle
+build
+out
+
+# IntelliJ / VSCode
+/.idea
+*.iml
+.vscode/
+
+# Gradle wrapper downloads
+gradle-*.zip
+gradle/wrapper/dists
+
+# Run directory
+run
+
+# Logs
+*.log
+.gradle/
+build/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+bin/
+*.jar
+run/
+.DS_Store
+*.swp
+*.swo
