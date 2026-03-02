@@ -5,7 +5,7 @@ plugins {
 
 group = 'com.example.horrormod'
 version = '1.0.0'
-archivesBaseName = 'horrormod'
+archivesBaseName = 'funny-horor'
 
 java {
     toolchain {

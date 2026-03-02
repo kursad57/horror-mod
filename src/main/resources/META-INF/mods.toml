@@ -1,9 +1,9 @@
 modLoader="javafml"
 loaderVersion="[46,)"
-license="MIT"
+license="NONE"
 
 [[mods]]
 modId="horrormod"
 version="1.0.0"
-displayName="Horror Mod"
-description="A small horror-mode mod skeleton."
+displayName="funny horor"
+description="its a funny mod"

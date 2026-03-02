@@ -1,6 +1,6 @@
-# Horror Mod
+# funny horor
 
-Minimal horror-themed Forge mod for Minecraft 1.20.1.
+its a funny mod
 
 Build
 ```
@@ -99,4 +99,4 @@ horror-mod/
 
 ## License
 
-CC0 1.0 Universal (Public Domain) — Use freely!
+NONE

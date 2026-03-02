@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "project_id": "",
-  "title": "Horror Mod",
-  "description": "Horror-themed mod for Minecraft 1.20.1.",
+  "title": "funny horor",
+  "description": "its a funny mod",
   "version_number": "1.0.0",
-  "license": "MIT",
+  "license": "NONE",
   "dependencies": {
     "minecraft": "1.20.1",
     "loader": "forge"
