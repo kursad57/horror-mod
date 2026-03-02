@@ -17,11 +17,12 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
-      - name: Run Gradle build (install Gradle)
-        uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: '8.4.1'
-          arguments: build
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle wrapper
+        run: |
+          ./gradlew build --no-daemon --no-parallel
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
@@ -30,6 +31,7 @@ jobs:
           path: build/libs/*.jar
 
       - name: Create release
+        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
