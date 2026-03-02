@@ -17,12 +17,13 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-
-      - name: Build with Gradle wrapper
+      - name: Install Gradle
         run: |
-          ./gradlew build --no-daemon --no-parallel
+          sudo apt-get update
+          sudo apt-get install -y gradle
+
+      - name: Build with Gradle
+        run: gradle build --no-daemon --no-parallel
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
