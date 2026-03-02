@@ -1,0 +1,57 @@
+name: Publish to Modrinth
+
+on:
+  workflow_dispatch: {}
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure Java available
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Build JAR
+        run: ./gradlew build --no-daemon --no-parallel
+
+      - name: Check Modrinth token and project id
+        id: check
+        run: |
+          python - << 'PY'
+import json,sys,os
+token=os.environ.get('MODRINTH_TOKEN','')
+proj=os.environ.get('MODRINTH_PROJECT_ID','')
+if not proj:
+    # try to read from modrinth.json
+    try:
+        with open('modrinth.json','r',encoding='utf-8') as f:
+            pj=json.load(f).get('project_id','')
+            proj=pj or proj
+    except Exception:
+        pass
+if not token:
+    print('ERROR: MODRINTH_TOKEN secret is missing. Add it in repository Settings → Secrets → Actions')
+    sys.exit(1)
+if not proj:
+    print('ERROR: Modrinth project id not found. Set secret MODRINTH_PROJECT_ID or add "project_id" to modrinth.json')
+    sys.exit(1)
+print('MODRINTH_TOKEN present and project id found')
+PY
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          MODRINTH_PROJECT_ID: ${{ secrets.MODRINTH_PROJECT_ID }}
+
+      - name: Upload to Modrinth (placeholder)
+        if: always()
+        run: |
+          echo "Now ready to upload to Modrinth. This workflow verifies token+project_id and builds the JAR."
+          echo "Please run the Modrinth upload step manually or allow me to add an automated upload step after you confirm the project_id and token are set."
